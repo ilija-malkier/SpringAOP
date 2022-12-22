@@ -17,14 +17,26 @@ public class GeneralAop {
     public void pointcut(){
 
     }
-    @Pointcut("@annotation(com.example.springaop.annotations.CustomAnotation)")
-    public void pointcutAnnotation(){
+//    @Pointcut("@annotation(com.example.springaop.annotations.CustomAnotation)")
+//    public void pointcutAnnotation(){
+//
+//    }
+//    @Pointcut("execution(* com.example.springaop.controllers.MyController.getProduct(..))")
+//    public void pointcutyExecutionExact(){
+//
+//    }
+//    @After("pointcutyExecutionExact()")
+//    public void after(JoinPoint joinPoint){
+//        log.info("After " + joinPoint.getSignature());
+//    }
 
-    }
-    @After("pointcutAnnotation()")
+    @After("pointcut()")
     public void after(JoinPoint joinPoint){
-        log.info("After " + joinPoint.getSignature());
+
+        Product arg = (Product) joinPoint.getArgs()[0];
+        log.info("After " + joinPoint.getSignature() + arg);
     }
+
 
 //    @After("pointcut()")
 //    public void after(JoinPoint joinPoint){
