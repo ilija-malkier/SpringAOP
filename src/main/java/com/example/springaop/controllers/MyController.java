@@ -15,12 +15,12 @@ public class MyController {
 
 
     @GetMapping("/")
-    @CustomAnotation
+//    @CustomAnotation
     public Product getProduct(){
         return new Product(UUID.randomUUID(),"Test",20.0);
     }
     @PostMapping("/")
-    @CustomAnotation
+//    @CustomAnotation
     public Product getProductwithInput(@RequestBody Product product){
         return product;
     }

@@ -30,12 +30,12 @@ public class GeneralAop {
 //        log.info("After " + joinPoint.getSignature());
 //    }
 
-    @After("pointcut()")
-    public void after(JoinPoint joinPoint){
-
-        Product arg = (Product) joinPoint.getArgs()[0];
-        log.info("After " + joinPoint.getSignature() + arg);
-    }
+//    @After("pointcut()")
+//    public void after(JoinPoint joinPoint){
+//
+//        Product arg = (Product) joinPoint.getArgs()[0];
+//        log.info("After " + joinPoint.getSignature() + arg);
+//    }
 
 
 //    @After("pointcut()")
@@ -65,4 +65,17 @@ public class GeneralAop {
 //        return proceed;
 //    }
 
+//    execution(com.example.springaop.entity.Product com.example.springaop.controllers.MyController.getProduct())
+//    sada je return type product
+//
+//    execution(com.example.springaop.entity.*com.example.springaop.controllers.MyController.getProduct())
+//            return type su sve klase iz paketa entity
+//
+//
+//    execution(void com.example.springaop.controllers.MyController.getProduct())
+//            return type je void
+//
+//
+//    execution(void com.example.springaop.controllers.MyController.get*())
+//    metoda pocinje sa get...
 }
